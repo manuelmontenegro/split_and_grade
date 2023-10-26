@@ -42,7 +42,7 @@ def read_groups_csv(filename, header_config):
     """
     if not path.exists(filename):
         fail(f"{filename} not found")
-    with open(filename, "r", newline="", encoding="utf-8") as csvfile:
+    with open(filename, "r", newline="", encoding="utf-8-sig") as csvfile:
         rows = csv.reader(csvfile)
         header = next(rows)
         for column in [header_config.group_column, header_config.grade_column,

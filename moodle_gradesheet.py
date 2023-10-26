@@ -10,7 +10,7 @@ def read_moodle_csv(filename, moodle_config):
     """It reads a Moodle gradesheet in CSV format and returns a list of rows."""
     if not path.exists(filename):
         fail(f"{filename} not found")
-    with open(filename, "r", newline="", encoding="utf8") as csvfile:
+    with open(filename, "r", newline="", encoding="utf-8-sig") as csvfile:
         rows = csv.reader(csvfile)
         result = list(rows)
         _check_headers(filename, result[0], moodle_config)
